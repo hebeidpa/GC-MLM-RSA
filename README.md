@@ -1,4 +1,4 @@
-# GC-RC-RSA
+# GC-MLM-RSA
 
 #A repository containing two core modules:
 
