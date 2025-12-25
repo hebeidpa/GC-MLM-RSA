@@ -1,45 +1,40 @@
 # GC-MLM-RCSA
 
-# Multimodal Radiopathomics Model Predicts Postoperative Metachronous Liver Metastasis in Gastric Cancer
+## Multimodal Radiopathomics for Postoperative Metachronous Liver Metastasis Prediction in Gastric Cancer
 
-## Overview
-This project mainly covers two core functionalities:
-- GastricNN-UNet: A CT segmentation model for gastric medical imaging using nnunet(https://github.com/MIC-DKFZ/nnUNet).
-- Pathomic Framework: Extracting features from whole slide images (WSIs)  using CLAM(https://github.com/mahmoodlab/CLAM).
+This repository contains the reference implementation of **GC-MLM-RCSA**, a multimodal deep learning framework for predicting **postoperative metachronous liver metastasis (MLM)** in patients with gastric cancer by integrating **radiological computed tomography (CT)** and **histopathological whole-slide images (WSIs)**.
 
-## Directory Structure
-```plaintext
-/gastricnnUNet
-/pathomic
-```
+The framework is designed for research purposes and aims to explore the complementary value of radiological and pathological information for individualized postoperative risk assessment.
 
-## Scripts
-### /gastricnnUNet
-#### Functionality
-- A customized implementation of the nnU-Net framework for 3D CT image segmentation focusing on gastric structures.
-- Key features:
+---
 
- -- Preprocessing pipelines optimized for abdominal CT scans
+## Introduction
 
- -- Configuration files for gastric organ/tumor segmentation
+Despite curative gastrectomy, a substantial proportion of gastric cancer patients develop metachronous liver metastasis, which severely affects long-term survival. Accurate postoperative risk stratification remains challenging due to the heterogeneous biological behavior of tumors.
 
-Trained model weights (optional, contact for access)
+Radiological images provide macroscopic information about tumor morphology and surrounding tissues, while histopathological whole-slide images capture microscopic tumor characteristics. However, models based on a single modality are often insufficient to comprehensively characterize tumor heterogeneity.
 
-2. Pathomic Framework
-A computational pathology toolkit for feature extraction from histopathology images, including:
+To address this issue, we propose a **multimodal radiopathomics framework** that jointly models radiological and pathological data to predict postoperative MLM risk.
 
-Handcrafted feature calculation (e.g., texture, morphology)
+---
 
-Deep feature extraction via pretrained encoders
+## Framework Overview
 
-Feature fusion and dimensionality reduction
+The proposed GC-MLM-RCSA framework consists of three main components:
 
-Installation
-Requirements
-Python 3.8+
+1. **Radiology Branch**
+   - Automatic segmentation of gastric regions on CT images
+   - Extraction of deep radiological features from segmented regions
 
-PyTorch 1.9+
+2. **Pathology Branch**
+   - Patch-level feature extraction from WSIs
+   - Slide-level representation learning using multiple instance learning
 
-MONAI 0.8+
+3. **Multimodal Prediction Module**
+   - Patient-level feature alignment
+   - Feature fusion and dimensionality reduction
+   - Final classification for MLM risk prediction
 
-SimpleITK
+---
+
+## Workflow
