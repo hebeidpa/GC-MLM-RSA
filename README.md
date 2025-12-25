@@ -20,7 +20,7 @@ To address this issue, we propose a **multimodal radiopathomics framework** that
 
 ## Framework Overview
 
-The proposed GC-MLM-RCSA framework consists of three main components:
+The proposed GC-MLM-RCSA framework consists of two main components:
 
 1. **Radiology Branch**
    - Automatic segmentation of gastric regions on CT images
@@ -29,11 +29,6 @@ The proposed GC-MLM-RCSA framework consists of three main components:
 2. **Pathology Branch**
    - Patch-level feature extraction from WSIs
    - Slide-level representation learning using multiple instance learning
-
-3. **Multimodal Prediction Module**
-   - Patient-level feature alignment
-   - Feature fusion and dimensionality reduction
-   - Final classification for MLM risk prediction
 
 ---
 
