@@ -33,3 +33,86 @@ The proposed GC-MLM-RCSA framework consists of two main components:
 ---
 
 ## Workflow
+
+## Usage
+
+This repository consists of two main functional modules:  
+(1) a **radiology module** for CT-based feature extraction, and  
+(2) a **pathology module** for WSI-based feature extraction.  
+
+The two modules are executed independently and their outputs are subsequently fused at the patient level for multimodal modeling.
+
+---
+
+### 1. Radiology Module (CT-based)
+
+The radiology module is used to process CT images and extract radiological features.
+
+#### Step 1: CT Preprocessing
+CT images should be converted to a unified format and resolution prior to analysis.
+
+Typical preprocessing includes:
+- Intensity normalization
+- Resampling to a fixed voxel spacing
+
+#### Step 2: Gastric Region Segmentation
+A trained gastric segmentation model is applied to CT images to obtain gastric region masks.
+
+The segmentation output is used to define regions of interest for downstream feature extraction.
+
+#### Step 3: Radiological Feature Extraction
+Deep radiological features are extracted from the segmented gastric regions.
+
+The output of this module is a patient-level radiological feature representation.
+
+---
+
+### 2. Pathology Module (WSI-based)
+
+The pathology module is used to process histopathological whole-slide images.
+
+#### Step 1: WSI Tiling
+Each whole-slide image is divided into fixed-size patches at a predefined magnification level.
+
+Patches containing sufficient tissue content are retained for further analysis.
+
+#### Step 2: Patch-level Feature Encoding
+Patch-level features are extracted using pretrained convolutional neural networks.
+
+Each patch is represented as a high-dimensional feature vector.
+
+#### Step 3: Slide-level Feature Aggregation
+Patch-level features are aggregated into slide-level representations using multiple instance learning.
+
+The output of this module is a patient-level pathological feature representation.
+
+---
+
+### 3. Multimodal Feature Fusion
+
+The radiological and pathological features obtained from the two modules are merged at the patient level.
+
+- Feature fusion is performed after feature extraction
+- Dimensionality reduction may be applied prior to fusion
+- The fused feature representation is used for final MLM risk prediction
+
+---
+
+## Input and Output Summary
+
+### Inputs
+- CT images (radiology module)
+- Whole-slide images (pathology module)
+
+### Outputs
+- Radiological feature vectors (per patient)
+- Pathological feature vectors (per patient)
+- Multimodal prediction scores
+
+---
+
+## Notes
+
+- The two modules can be run independently
+- Feature fusion and prediction require matched patient identifiers
+- Pretrained models and example datasets are not publicly released due to data privacy constraints
