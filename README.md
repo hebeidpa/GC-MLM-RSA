@@ -4,7 +4,7 @@
 
 ## Overview
 This project mainly covers two core functionalities:
-- GastricNN-UNet: A nnU-Net-based CT segmentation model for gastric medical imaging.
+- GastricNN-UNet: A CT segmentation model for gastric medical imaging using nnunet(https://github.com/MIC-DKFZ/nnUNet).
 - Pathomic Framework: Extracting features from whole slide images (WSIs)  using CLAM(https://github.com/mahmoodlab/CLAM).
 
 ## Directory Structure
