@@ -12,16 +12,16 @@ This project mainly covers two core functionalities:
 /gastricnnUNet
 /pathomic
 ```
-Overview
 
 ## Scripts
+### /gastricnnUNet
+#### Functionality
+- A customized implementation of the nnU-Net framework for 3D CT image segmentation focusing on gastric structures.
+- Key features:
 
-1. GastricNN-UNet
-A customized implementation of the nnU-Net framework for 3D CT image segmentation focusing on gastric structures. Key features:
+ -- Preprocessing pipelines optimized for abdominal CT scans
 
-Preprocessing pipelines optimized for abdominal CT scans
-
-Configuration files for gastric organ/tumor segmentation
+ -- Configuration files for gastric organ/tumor segmentation
 
 Trained model weights (optional, contact for access)
 
