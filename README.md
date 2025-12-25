@@ -1,29 +1,18 @@
-# GC-MLM-RSA
+# GC-MLM-RCSA
 
-#A repository containing two core modules:
+# Multimodal Radiopathomics Model Predicts Postoperative Metachronous Liver Metastasis in Gastric Cancer
 
-GastricNN-UNet: A nnU-Net-based CT segmentation model for gastric medical imaging.
+## Overview
+This project mainly covers two core functionalities:
+- GastricNN-UNet: A nnU-Net-based CT segmentation model for gastric medical imaging.
+- Pathomic Framework: Extracting features from whole slide images (WSIs)  using CLAM(https://github.com/mahmoodlab/CLAM).
 
-Pathomic Framework: A pipeline for extracting pathomic features from medical data.
-
-Table of Contents
-Overview
-
-Installation
-
-Usage
-
-Repository Structure
-
-License
-
-Citation
-
-Contributing
-
-FAQ
-
-Overview
+## Directory Structure
+```plaintext
+train.py
+test.py
+feature_extractor.py
+```Overview
 1. GastricNN-UNet
 A customized implementation of the nnU-Net framework for 3D CT image segmentation focusing on gastric structures. Key features:
 
