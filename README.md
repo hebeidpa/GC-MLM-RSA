@@ -9,10 +9,11 @@ This project mainly covers two core functionalities:
 
 ## Directory Structure
 ```plaintext
-train.py
-test.py
-feature_extractor.py
+/gastricnnUNet
+/pathomic
 ```Overview
+## Scripts
+
 1. GastricNN-UNet
 A customized implementation of the nnU-Net framework for 3D CT image segmentation focusing on gastric structures. Key features:
 
