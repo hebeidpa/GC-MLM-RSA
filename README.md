@@ -69,8 +69,7 @@ The output of this module is a patient-level radiological feature representation
 
 ### 2. Pathology Module (WSI-based)
 
-The pathology module is used to process histopathological whole-slide images.
-
+The pathology module is used to process histopathological whole-slide images based on the CLAM library(https://github.com/mahmoodlab/CLAM).
 #### Step 1: WSI Tiling
 Each whole-slide image is divided into fixed-size patches at a predefined magnification level.
 
