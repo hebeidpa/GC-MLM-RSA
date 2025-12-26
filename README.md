@@ -77,6 +77,11 @@ Patches containing sufficient tissue content are retained for further analysis.
 ```plaintext
 python create_patches_fp.py --source ./WSI --save_dir ./PATCH --patch_size 256 --preset bwh_resection.csv --seg --patch --stitch
 ```
+
+#### Parameters
+- `source`: digitized whole slide image data in well known standard formats (.svs, .ndpi, .tiff etc.) are stored under a folder named ./WSI
+- `save_dir`: Generate the path(s) for the output file(s).
+
 #### Step 2: Patch-level Feature Encoding
 Patch-level features are extracted using UNI. (UNI: https://huggingface.co/MahmoodLab/UNI).
 ```plaintext
