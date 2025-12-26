@@ -112,3 +112,7 @@ python h5_to_csv.py
 - The two modules can be run independently
 - Feature fusion and prediction require matched patient identifiers
 - Pretrained models and example datasets are not publicly released due to data privacy constraints
+## Acknowledgements
+ - We would like to express our sincere gratitude to all contributors and collaborators who supported this project. Special thanks to our research  - team members for their invaluable discussions and technical insights, which greatly enhanced the development and implementation of this work.
+
+ - We also acknowledge the open-source community and developers of libraries such as PyTorch, OpenSlide, and scikit-learn, whose efforts made it possible to build and refine our models efficiently. Finally, we are grateful to the institutions and organizations that provided the datasets and computational resources necessary for completing this project.
