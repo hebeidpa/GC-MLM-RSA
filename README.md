@@ -88,21 +88,13 @@ The above command expects the coordinates .h5 files to be stored under ./PATCH a
 where each .h5 file contains an array of extracted features along with their patch coordinates (note for faster training, a .pt file for each slide is also created for each slide, containing just the patch features).
 
 #### Step 3: Slide-level Feature Aggregation
-Patch-level features are aggregated into slide-level representations using multiple instance learning.
 
+Patch-level features are aggregated into slide-level representations using mean pooling, yielding 1024 features per slide.
 The output of this module is a patient-level pathological feature representation.
+```plaintext
+python h5_to_csv.py
+```
 
----
-
-### 3. Multimodal Feature Fusion
-
-The radiological and pathological features obtained from the two modules are merged at the patient level.
-
-- Feature fusion is performed after feature extraction
-- Dimensionality reduction may be applied prior to fusion
-- The fused feature representation is used for final MLM risk prediction
-
----
 
 ## Input and Output Summary
 
@@ -113,9 +105,7 @@ The radiological and pathological features obtained from the two modules are mer
 ### Outputs
 - Radiological feature vectors (per patient)
 - Pathological feature vectors (per patient)
-- Multimodal prediction scores
 
----
 
 ## Notes
 
