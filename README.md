@@ -24,7 +24,7 @@ The proposed GC-MLM-RCSA framework consists of two main components:
 
 1. **Radiology Branch**
    - Automatic segmentation of gastric regions on CT images
-   - Extraction of deep radiological features from segmented regions
+   - Extraction of radiological features from segmented regions
 
 2. **Pathology Branch**
    - Patch-level feature extraction from WSIs
@@ -61,7 +61,7 @@ A trained gastric segmentation model is applied to CT images to obtain gastric r
 The segmentation output is used to define regions of interest for downstream feature extraction.
 
 #### Step 3: Radiological Feature Extraction
-Deep radiological features are extracted from the segmented gastric regions.
+Radiological features are extracted from the segmented gastric regions.
 
 The output of this module is a patient-level radiological feature representation.
 
