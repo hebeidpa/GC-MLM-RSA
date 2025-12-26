@@ -75,11 +75,17 @@ The pathology module is used to process histopathological whole-slide images.
 Each whole-slide image is divided into fixed-size patches at a predefined magnification level.
 
 Patches containing sufficient tissue content are retained for further analysis.
-
+```plaintext
+python create_patches_fp.py --source ./WSI --save_dir ./PATCH --patch_size 256 --preset bwh_resection.csv --seg --patch --stitch
+```
 #### Step 2: Patch-level Feature Encoding
-Patch-level features are extracted using pretrained convolutional neural networks.
+Patch-level features are extracted using UNI. (UNI: https://huggingface.co/MahmoodLab/UNI).
+```plaintext
+python extract_features_fp.py --data_h5_dir ./PATCH --data_slide_dir ./WSI --csv_path ./csv --feat_dir ./FEATURES --batch_size 512 --slide_ext .svs
+```
 
-Each patch is represented as a high-dimensional feature vector.
+The above command expects the coordinates .h5 files to be stored under ./PATCH and a batch size of 512 to extract 1024-dim features from each tissue patch for each slide and produce the following folder structure:
+where each .h5 file contains an array of extracted features along with their patch coordinates (note for faster training, a .pt file for each slide is also created for each slide, containing just the patch features).
 
 #### Step 3: Slide-level Feature Aggregation
 Patch-level features are aggregated into slide-level representations using multiple instance learning.
